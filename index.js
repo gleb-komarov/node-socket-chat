@@ -18,6 +18,6 @@ io.on('connection', (socket) => {
 
 app.use(express.static(__dirname));
 
-http.listen(3000, () => {
-    console.log('Server started');
-})  
+http.createServer( app ).listen( app.get( 'port' ), function (){
+    console.log( 'Start server: http://localhost:' + app.get( 'port' ));
+});
